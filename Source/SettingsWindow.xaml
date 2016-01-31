@@ -1,0 +1,56 @@
+﻿<Window x:Class="ExtensionSpoofer.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Extension Spoofer"
+        Width="505"
+        Height="259"
+        Icon="Icon.png"
+        Loaded="SettingsWindow_OnLoaded"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+    <Grid>
+        <StackPanel Width="300"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Vertical">
+            <TextBlock Text="File Name" />
+            <Grid Margin="0,2,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="FileNameTextBox" TextChanged="FileNameTextBox_OnTextChanged" />
+                <ComboBox x:Name="ExtensionComboBox"
+                          Grid.Column="2"
+                          SelectedIndex="0"
+                          SelectionChanged="ExtensionComboBox_OnSelectionChanged">
+                    <ComboBoxItem Content="EXE" />
+                    <ComboBoxItem Content="SCR" />
+                    <ComboBoxItem Content="COM" />
+                </ComboBox>
+            </Grid>
+            <TextBlock Margin="0,10,0,0" Text="Extension" />
+            <ComboBox x:Name="SpoofedExtensionComboBox"
+                      Margin="0,2,0,0"
+                      IsEditable="True"
+                      SelectedIndex="0"
+                      TextBoxBase.TextChanged="SpoofedExtensionComboBox_OnTextChanged">
+                <ComboBoxItem Content=".jpg" />
+                <ComboBoxItem Content=".mp4" />
+                <ComboBoxItem Content=".mp3" />
+                <ComboBoxItem Content=".avi" />
+                <ComboBoxItem Content=".pdf" />
+            </ComboBox>
+            <DockPanel Margin="0,10,0,0">
+                <TextBlock Text="Preview: " />
+                <TextBlock x:Name="ResultTextBlock"
+                           FontStyle="Italic"
+                           Text="" />
+            </DockPanel>
+        </StackPanel>
+    </Grid>
+</Window>
