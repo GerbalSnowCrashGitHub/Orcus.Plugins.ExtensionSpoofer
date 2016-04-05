@@ -11,6 +11,11 @@
         ShowInTaskbar="False"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource LabelTextBrush}" />
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel Width="300"
                     HorizontalAlignment="Center"
